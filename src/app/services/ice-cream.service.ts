@@ -1,10 +1,11 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore } from '@angular/fire/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EntityService {
+export class IceCreamService {
 
   constructor() { }
 
@@ -12,8 +13,8 @@ export class EntityService {
 
 
   create(formData: any): void {
-    const storedData = collection(this._firestore, 'collection');
-    
+    const storedData = collection(this._firestore, 'icecream');
+
     addDoc(storedData, { ...formData });
   }
 }

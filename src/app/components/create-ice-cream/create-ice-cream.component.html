@@ -1,0 +1,36 @@
+<h1>Crear helado</h1>
+<form [formGroup]="entityForm" (submit)="submit()">
+    <div class="column">
+        <label for="name">Sabor:</label>
+        <input type="text" formControlName="name">
+        <div *ngIf="formControls['name'].touched && formControls['name'].invalid" class="error">
+            Sabor es requerido
+        </div>
+    </div>
+
+    <div class="column">
+        <label for="price">Precio:</label>
+        <input type="number" formControlName="price">
+        <div *ngIf="formControls['price'].touched && formControls['price'].invalid" class="error">
+            Precio es requerido
+        </div>
+    </div>
+
+    <div class="column">
+        <label for="weight">Peso:</label>
+        <input type="number" formControlName="weight">
+        <div *ngIf="formControls['weight'].touched && formControls['weight'].invalid" class="error">
+            Precio es requerido
+        </div>
+    </div>
+
+    <div class="column">
+        <label for="type">Tipo:</label>
+        <input type="text" formControlName="type">
+        <div *ngIf="formControls['type'].touched && formControls['type'].invalid" class="error">
+            Tipo es requerido
+        </div>
+    </div>
+    <button type="submit">Agregar</button>
+
+</form>

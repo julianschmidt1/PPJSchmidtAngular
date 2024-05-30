@@ -1,0 +1,29 @@
+<div class="screen">
+    <div>
+        <h1>Inicia sesion</h1>
+    </div>
+
+    <form [formGroup]="loginForm" (submit)="login()">
+
+        <div style="display: flex; flex-direction: column;">
+            <input type="text" formControlName="username" placeholder="Usuario">
+            <div *ngIf="userControl.touched && userControl.invalid">
+                <div class="error" *ngIf="userControl.errors?.['required']">El nombre de usuario es requerido.</div>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <input type="password" formControlName="password" placeholder="Contraseña">
+            <div *ngIf="passwordControl.touched && passwordControl.invalid">
+                <div class="error" *ngIf="passwordControl.errors?.['required']">La contraseña es requerida.</div>
+            </div>
+        </div>
+
+        <button type="submit">Iniciar sesión</button>
+    </form>
+    <h3>Credenciales</h3>
+    <div style="display: flex; gap: 8px;">
+        <button (click)="setAdminCredentials()">Usuario admin</button>
+        <button (click)="setRegularCredentials()">Usuario comun</button>
+    </div>
+</div>

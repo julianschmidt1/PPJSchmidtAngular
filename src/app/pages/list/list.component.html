@@ -1,0 +1,9 @@
+<div class="screen">
+    <h1>Listado de repartidores</h1>
+    <user-table (onUserSelect)="setSelectedUser($event)"></user-table>
+    <ng-container *ngIf="selectedUserData">
+        <user-detail [name]="selectedUserData.name" [age]="selectedUserData.age" [country]="selectedUserData.country"
+            [dni]="selectedUserData.dni" [quantity]="selectedUserData.quantity"
+            [flag]="selectedUserData.countryFlag"></user-detail>
+    </ng-container>
+</div>

@@ -1,0 +1,13 @@
+<div class="screen">
+    <ng-container *ngIf="aboutData; else loading">
+        <h1>{{aboutData.name}}</h1>
+        <img style="height: 250px; width: 250px;" [src]="aboutData.avatar_url" alt="">
+
+        <h3>Seguidores: {{aboutData.followers}}</h3>
+        <button routerLink="/login">Iniciar sesion</button>
+    </ng-container>
+
+    <ng-template #loading>
+        <h1>Cargando...</h1>
+    </ng-template>
+</div>

@@ -1,0 +1,59 @@
+<div class="screen">
+    <h1>Agregar repartidor</h1>
+    <div style="display: flex; gap: 30px;">
+        <form [formGroup]="entityForm" (submit)="submit()">
+            <input type="hidden" formControlName="countryFlag">
+            <div class="column">
+                <label for="name">DNI:</label>
+                <input type="number" formControlName="dni">
+                <div *ngIf="formControls['dni'].touched && formControls['dni'].invalid" class="error">
+                    DNI es requerido
+                </div>
+            </div>
+
+            <div class="column">
+                <label for="name">Nombre:</label>
+                <input type="text" formControlName="name">
+                <div *ngIf="formControls['name'].touched && formControls['name'].invalid" class="error">
+                    Nombre es requerido
+                </div>
+            </div>
+
+            <div class="column">
+                <label for="age">Edad:</label>
+                <input type="number" formControlName="age">
+                <div *ngIf="formControls['age'].touched && formControls['age'].invalid" class="error">
+                    Edad es requerido y debe estar entre 18 y 80
+                </div>
+            </div>
+
+            <div class="column">
+                <label for="quantity">Capacidad de transporte:</label>
+                <input type="number" formControlName="quantity">
+                <div *ngIf="formControls['quantity'].touched && formControls['quantity'].invalid" class="error">
+                    Capacidad es requerido y debe ser mayor a 0
+                </div>
+            </div>
+
+            <div class="column">
+                <label for="country">Pais de origen:</label>
+                <input type="text" [readOnly]="true" formControlName="country">
+                <div *ngIf="formControls['country'].touched && formControls['country'].invalid" class="error">
+                    El pais es requerido
+                </div>
+            </div>
+
+            <div>
+                <label for="hasCar">Unidad propia:</label>
+                <input type="checkbox" formControlName="hasCar">
+                <div *ngIf="formControls['hasCar'].touched && formControls['hasCar'].invalid" class="error">
+                    Unidad propia es requerido
+                </div>
+            </div>
+
+            <button type="submit">Agregar</button>
+        </form>
+        <countries-table (onCountrySelect)="handleSelectCountry($event)"></countries-table>
+    </div>
+
+</div>

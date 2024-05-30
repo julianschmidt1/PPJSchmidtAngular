@@ -1,0 +1,15 @@
+<ng-container *ngIf="countries.length">
+
+    <table>
+        <tr>
+            <th style="text-align: start;">Nombre</th>
+            <th>Bandera</th>
+        </tr>
+        <tr *ngFor="let item of countries" (click)="handleSelectCountry(item)">
+            <td>{{item.name.common}}</td>
+            <td>
+                <img style="height: 30px; width: 50px;" [src]="item.flags.svg" alt="">
+            </td>
+        </tr>
+    </table>
+</ng-container>

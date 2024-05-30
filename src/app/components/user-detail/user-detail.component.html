@@ -1,0 +1,24 @@
+<div style="display: flex; gap: 10px;">
+
+    <div style="display: flex; flex-direction: column; margin-top: 15px; gap: 8px;">
+        <div>
+            Nombre: {{name}}
+        </div>
+        <div>
+            Edad: {{age}}
+        </div>
+        <div>
+            DNI: {{dni}}
+        </div>
+        <div>
+            Capacidad de carga: {{quantity}}
+        </div>
+        <div>
+            Unidad propia: {{hasCar ? 'SI' : 'NO'}}
+        </div>
+    </div>
+    <div>
+        <img [src]="flag" style="height: 200px; width: 250px;" alt="">
+        <div>Pais: {{country}}</div>
+    </div>
+</div>
